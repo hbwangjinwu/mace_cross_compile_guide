@@ -1,0 +1,18 @@
+new_local_repository(
+    name ='toolchain_target_armv7',
+    path ='/opt/arm-hisiv300-linux',
+    build_file = 'arm_compiler/cross_toolchain_target_armv7.BUILD'
+)
+
+# proto_library rules implicitly depend on @com_google_protobuf//:protoc,
+# which is the proto-compiler.
+# This statement defines the @com_google_protobuf repo.
+http_archive(
+    name = "com_google_protobuf",
+    sha256 = "542703acadc3f690d998f4641e1b988f15ba57ebca05fdfb1cd9095bec007948",
+    strip_prefix = "protobuf-3.4.0",
+    urls = [
+        #"https://cnbj1.fds.api.xiaomi.com/mace/third-party/protobuf/protobuf-3.4.0.zip",
+        "https://github.com/google/protobuf/archive/v3.5.0.zip",
+    ],
+)
