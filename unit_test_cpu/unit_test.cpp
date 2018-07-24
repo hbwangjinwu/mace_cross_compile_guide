@@ -70,7 +70,7 @@ int main(int argc, char** argv)
       in_file.close();
     } else 
 	{
-      std::cout << "Open input file dog.npy failed"<<endl;
+      std::cout << "Open input file dog.npy failed"<<"\n";
       return -1;
     } 
 	std::map<std::string, mace::MaceTensor> inputs;
